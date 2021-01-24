@@ -10,6 +10,7 @@ public:
 	int Get_Width();
 	int Get_Height();
 	void makeMap();
+	int *operator[](int i);
 	~Field();
 };
 
