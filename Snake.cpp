@@ -9,9 +9,10 @@ Snake::Snake()
 
 int Snake::Get_Length() { return this->length; }
 
-int Snake::Get_Position_X(int index) { return this->snake[index].widthPos; }
+int Snake::Get_Position_Width(int index) { return this->snake[index].widthPos; }
 
-int Snake::Get_Position_Y(int index) { return this->snake[index].heigthPos; }
+	
+int Snake::Get_Position_Heigth(int index) { return this->snake[index].heigthPos; }
 
 void Snake::addSegment(int widthPos, int heigthPos)
 {

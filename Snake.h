@@ -12,8 +12,8 @@ class Snake
 public:
 	Snake();
 	int Get_Length();
-	int Get_Position_X(int index);
-	int Get_Position_Y(int index);
+	int Get_Position_Width(int index);
+	int Get_Position_Heigth(int index);
 	void addSegment(int x, int y);
 	PositionSegment* operator[](int i);
 	void Set_Length(int length);
