@@ -22,6 +22,11 @@ void Snake::addSegment(int widthPos, int heigthPos)
 	this->length++;
 }
 
+PositionSegment* Snake::operator[](int i)
+{
+	return &snake[i];
+}
+
 
 
 void Snake::Set_Length(int length) { this->length = length; }

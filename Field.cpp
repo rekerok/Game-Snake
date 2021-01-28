@@ -26,6 +26,17 @@ void Field::makeMap()
 				map[i][j] = (int)' ';
 }
 
+void Field::paintNewMap()
+{
+	for (int i = 0; i < this->height; i++)
+		for (int j = 0; j < this->width; j++)
+			if (i == 0 || i == height - 1
+				|| j == 0 || j == width - 1)
+				map[i][j] = (int)'*';
+			else
+				map[i][j] = (int)' ';
+}
+
 int* Field::operator[](int i)
 {
 	return map[i];

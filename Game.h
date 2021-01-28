@@ -10,6 +10,7 @@ public:
 	Game();
 	Game(int width, int height);
 	void drawMap();
+	void moveSnake();
 	// Game(int width, int height, int length);
 };
 

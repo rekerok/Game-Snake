@@ -6,7 +6,13 @@
 int main() {
 	srand(time(NULL));
 	Game Snake(20, 20);
-	Snake.drawMap();
+	while (true)
+	{
+		Snake.drawMap();
+		Snake.moveSnake();
+		system("cls");
+	}
+	
 	return 0;
 	system("pause");
 }
