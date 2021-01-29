@@ -1,6 +1,7 @@
 #include "Snake.h"
 #include <iostream>
 #include <iterator>
+#include "Position.h"
 using namespace std;
 Snake::Snake()
 {
@@ -9,26 +10,19 @@ Snake::Snake()
 
 int Snake::Get_Length() { return this->length; }
 
-int Snake::Get_Position_Width(int index) { return this->snake[index].widthPos; }
+Position Snake::Get_Position(int index) { return this->snake[index]; }
 
-	
-int Snake::Get_Position_Heigth(int index) { return this->snake[index].heigthPos; }
 
-void Snake::addSegment(int widthPos, int heigthPos)
+void Snake::addSegment(Position pos)
 {
-	PositionSegment tmp;
-	tmp.widthPos = widthPos;
-	tmp.heigthPos = heigthPos;
-	snake.push_back(tmp);
+	snake.push_back(pos);
 	this->length++;
 }
 
-PositionSegment* Snake::operator[](int i)
+Position* Snake::operator[](int i)
 {
 	return &snake[i];
 }
-
-
 
 void Snake::Set_Length(int length) { this->length = length; }
 

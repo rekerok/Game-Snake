@@ -1,8 +1,7 @@
 #include "Food.h"
-void Food::Set_Position(int width, int height)
+void Food::Set_Position(Position *pos)
 {
-	this->food.heigthPos = height;
-	this->food.widthPos = width;
+	this->food.heigthPos = pos->heigthPos;
+	this->food.widthPos = pos->widthPos;
 }
-int Food::Get_Position_Width() { return this->food.widthPos; }
-int Food::Get_Position_Heigth() { return this->food.heigthPos; }
+Position Food::Get_Position() { return this->food; }

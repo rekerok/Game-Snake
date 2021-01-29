@@ -5,7 +5,7 @@
 // min + rand() % (max - min + 1);
 int main() {
 	srand(time(NULL));
-	Game Snake(20, 20);
+	Game Snake(50, 20);
 	while (true)
 	{
 		Snake.drawMap();

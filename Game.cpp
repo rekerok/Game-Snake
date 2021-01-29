@@ -7,28 +7,34 @@
 #define KEY_LEFT 75
 #define KEY_RIGHT 77
 
+Position Game::randomPositionOnMap()
+{
+	Position tmp(randomRangeNumber(1, this->map.Get_Height() - 1),
+		randomRangeNumber(1, this->map.Get_Width() - 1));
+	return tmp;
+}
+
 Game::Game() {
 	
 }
 
 Game::Game(int width, int height)
 {
+
 	this->map.Set_Size(width, height);
 	this->map.makeMap();
-	this->snake.addSegment(randomRangeNumber(1, this->map.Get_Height() - 1),
-		randomRangeNumber(1, this->map.Get_Width() - 1));
-	this->food.Set_Position(randomRangeNumber(1, this->map.Get_Height() - 1),
-		randomRangeNumber(1, this->map.Get_Width() - 1));
+	this->snake.addSegment(this->randomPositionOnMap());
+	this->food.Set_Position(&this->randomPositionOnMap());
 }
 
 void Game::drawMap()
 {
 	map.paintNewMap();
-	map[this->food.Get_Position_Heigth()][this->food.Get_Position_Width()] = (int)'$';
+	map[this->food.Get_Position().heigthPos][this->food.Get_Position().widthPos] = (int)'$';
 	for (int i = 0; i < this->snake.Get_Length(); i++)
 	{
-		this->map[this->snake.Get_Position_Heigth(i)]
-			[this->snake.Get_Position_Width(i)] = (int)'0';
+		this->map[this->snake.Get_Position(i).heigthPos]
+			[this->snake.Get_Position(i).widthPos] = (int)'0';
 	}
 	for (int i = 0; i < this->map.Get_Height(); i++){
 		for (int j = 0; j < this->map.Get_Width(); j++)

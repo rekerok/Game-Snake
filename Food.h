@@ -1,15 +1,11 @@
 #pragma once
+#include "Position.h"
 class Food
 {
 private:
-	struct PositionFood
-	{
-		int widthPos, heigthPos;
-	};
-	PositionFood food;
+	Position food;
 public:
-	void Set_Position(int width, int height);
-	int Get_Position_Width();
-	int Get_Position_Heigth();
+	void Set_Position(Position *pos);
+	Position Get_Position();
 };
 
