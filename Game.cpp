@@ -18,10 +18,10 @@ Game::Game() {
 	
 }
 
-Game::Game(int width, int height)
+Game::Game(int height, int width)
 {
 
-	this->map.Set_Size(width, height);
+	this->map.Set_Size(height, width);
 	this->map.makeMap();
 	this->snake.addSegment(this->randomPositionOnMap());
 	this->food.Set_Position(&this->randomPositionOnMap());
@@ -60,12 +60,26 @@ void Game::moveSnake() {
 	default:
 		break;
 	}
+
 }
 
-void Game::foodOnMap()
+void Game::logicGame()
 {
-	
+	this->snake.moveSnake();
+	if (*this->snake[0] == this->food.Get_Position()){
+		this->snake.addSegment(this->food.Get_Position());
+		this->food.Set_Position(&this->randomPositionOnMap());
+	}
 }
+
+bool Game::gameOver()
+{
+	if (this->snake[0]->heigthPos == 0 
+		|| this->snake[0]->widthPos == 0)
+		return false;
+	return true;
+}
+
 
 //	Game::Game(int width, int height, int length) : Game::Game(width, height)
 //	{

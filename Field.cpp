@@ -2,10 +2,10 @@
 
 Field::Field() {  }
 
-void Field::Set_Size(int width, int height)
+void Field::Set_Size( int height, int width)
 {
-	this->width = width;
 	this->height = height;
+	this->width = width;
 }
 
 int Field::Get_Width() { return this->width; }

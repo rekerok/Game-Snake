@@ -6,7 +6,7 @@ private:
 	int **map;
 public:
 	Field();
-	void Set_Size(int width, int height);
+	void Set_Size(int height, int width);
 	int Get_Width();
 	int Get_Height();
 	void makeMap();

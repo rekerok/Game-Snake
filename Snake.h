@@ -13,7 +13,7 @@ public:
 	void addSegment(Position Pos);
 	Position* operator[](int i);
 	void Set_Length(int length);
-
+	void moveSnake();
 	~Snake();
 };
 

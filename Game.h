@@ -12,10 +12,12 @@ private:
 	Position randomPositionOnMap();
 public:
 	Game();
-	Game(int width, int height);
+	Game(int height, int width);
 	void drawMap();
 	void moveSnake();
-	void foodOnMap();
+	void logicGame();
+	bool gameOver();
+	// void foodOnMap();
 	// Game(int width, int height, int length);
 };
 

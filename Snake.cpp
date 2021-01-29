@@ -26,6 +26,12 @@ Position* Snake::operator[](int i)
 
 void Snake::Set_Length(int length) { this->length = length; }
 
+void Snake::moveSnake()
+{
+	for (int i = snake.size() - 1; i > 0; i--)
+		snake[i] = snake[i - 1];
+}
+
 Snake::~Snake()
 {
 }

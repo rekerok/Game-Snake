@@ -5,11 +5,12 @@
 // min + rand() % (max - min + 1);
 int main() {
 	srand(time(NULL));
-	Game Snake(50, 20);
-	while (true)
+	Game Snake(20, 50);
+	while (Snake.gameOver())
 	{
 		Snake.drawMap();
 		Snake.moveSnake();
+		Snake.logicGame();
 		system("cls");
 	}
 	
