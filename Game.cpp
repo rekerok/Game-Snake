@@ -9,8 +9,8 @@
 
 Position Game::randomPositionOnMap()
 {
-	Position tmp(randomRangeNumber(1, this->map.Get_Height() - 1),
-		randomRangeNumber(1, this->map.Get_Width() - 1));
+	Position tmp(randomRangeNumber(1, this->map.Get_Height() - 2),
+		randomRangeNumber(1, this->map.Get_Width() - 2));
 	return tmp;
 }
 
@@ -74,10 +74,7 @@ void Game::logicGame()
 
 bool Game::gameOver()
 {
-	if (this->snake[0]->heigthPos == 0 
-		|| this->snake[0]->widthPos == 0)
-		return false;
-	return true;
+
 }
 
 

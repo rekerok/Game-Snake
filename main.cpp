@@ -4,7 +4,7 @@
 #include "Game.h"
 // min + rand() % (max - min + 1);
 int main() {
-	srand(time(NULL));
+	// srand(time(NULL));
 	Game Snake(20, 50);
 	while (Snake.gameOver())
 	{
